@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace LList
 {
-    class LinkedMember<T>
+    public class LinkedMember<T>
     {
         public T Data { get; set; }
         public LinkedMember<T> Next { get; set; }
         public LinkedMember<T> Previous { get; set; }
     }
 
-    class LinkedList<T>
+    public class LinkedList<T>
     {
         public LinkedMember<T> Head { get; private set; }
 
