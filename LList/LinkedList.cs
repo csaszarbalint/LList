@@ -161,7 +161,7 @@ namespace LList
                 }
                 else
                 {
-                    //inserting before temp 
+                    //inserting before node 
                     var node = GetMemberAt(index);
                     var nodePreIndex = node.Previous;
 

@@ -116,5 +116,18 @@ namespace LinkedList.Test
             Assert.AreSame(_sut.Tail.Data, _sut.Search( data => data == "Zoltán"));
         }
         //---------- 
+
+        //---------- ToList 
+        [TestMethod]
+        public void ToList_SuccessfulConvertionToDotNETList()
+        {
+            var node = _sut.Head;
+            foreach(var e in _sut.ToList())
+            {
+                Assert.AreEqual(e, node.Data);
+                node = node.Next;
+            }
+        }
+        //---------- 
     }
 }
