@@ -10,22 +10,6 @@ namespace LList
     {
         static void Main(string[] args)
         {
-            
-/*            Console.WriteLine(list);
-
-            list.Insert(0, "Aladár");
-            var ix = list.IndexOf("Lilla");
-            list.Insert(ix, "Miklós");
-            list.Insert(-1, "Zsófia");
-            Console.WriteLine(list);
-
-            list.Remove("Miklós");
-            Console.WriteLine(list);
-
-            ix = list.IndexOf("Lilla");
-            list.RemoveAt(ix);
-            Console.WriteLine(list);
-
-*/        }
+        }
     }
 }
