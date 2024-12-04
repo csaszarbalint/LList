@@ -77,7 +77,8 @@ namespace LList
                     }
                     member = member.Next;
                     count++;
-                } while (member.Next != null);
+                } while (member != null);
+                //so it doesn't miss the last element
 
                 if (hasFound)
                 {
@@ -160,12 +161,15 @@ namespace LList
                 }
                 else
                 {
-                    var prev = GetMemberAt(index);
-                    var next = prev.Next;
-                    member.Previous = prev;
-                    member.Next = next;
-                    prev.Next = member;
-                    next.Previous = member;
+                    //inserting before temp 
+                    var node = GetMemberAt(index);
+                    var nodePreIndex = node.Previous;
+
+                    member.Previous = nodePreIndex;
+                    member.Next = node;
+
+                    node.Previous = member;
+                    nodePreIndex.Next = member;
                 }
                 Length++;
             }

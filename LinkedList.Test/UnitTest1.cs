@@ -30,22 +30,24 @@ namespace LinkedList.Test
 
         }
 
-        //---------- Length ----------
+        //---------- Length
         [TestMethod]
         public void Length_ReturnsCorrectValue()
         {
             Assert.AreEqual(names.Length, _sut.Length);
         }
+        //---------- 
 
-        //---------- Get ----------
+        //---------- Get 
         [TestMethod]
         public void Get_GetsCorrectElement()
         {
             Assert.AreEqual(_sut.Head.Data, _sut.Get(0));
             Assert.AreEqual(_sut.Tail.Data, _sut.Get(_sut.Length-1));
         }
+        //---------- 
 
-        //---------- IndexOf ----------
+        //---------- IndexOf
         [TestMethod]
         public void IndexOf_ReturnsCorrectElement()
         {
@@ -53,8 +55,9 @@ namespace LinkedList.Test
             Assert.AreEqual(1, _sut.IndexOf("Balázs"));
             Assert.AreEqual(_sut.Length-1, _sut.IndexOf("Zoltán"));
         }
+        //---------- 
 
-        //---------- Add ----------
+        //---------- Add 
         [TestMethod]
         public void Add_AddsElement()
         {
@@ -67,29 +70,35 @@ namespace LinkedList.Test
             _sut.Add(null);
             Assert.AreEqual(null, _sut.Tail.Data);
         }
+        //---------- 
 
-        //---------- Insert ----------
+        //---------- Insert 
         [TestMethod]
         public void Insert_InsertedValueAtCorrectLocation()
         {
-            _sut.Insert(2, "alma");
-            Assert.AreEqual("alma",_sut.Get(2));
+            _sut.Insert(2, "");
+            Assert.AreEqual("",_sut.Get(2));
+
+            _sut.Insert(0, "");
+            Assert.AreEqual("", _sut.Get(0));
         }
         [TestMethod]
         public void Insert_HandelsNegativeArgumentCorrectly()
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _sut.Insert(-2, "alma"));
         }
+        //---------- 
 
-        //---------- Remove ----------
+        //---------- Remove 
         [TestMethod]
         public void Remove_RemovesElement()
         {
             _sut.Remove("Balázs");
             Assert.AreEqual(_sut.IndexOf("Balázs"),-1);
         }
+        //---------- 
 
-        //---------- RemoveAt ----------
+        //---------- RemoveAt 
         [TestMethod]
         public void RemoveAt_RemovesElementAtCorrectLocation()
         {
@@ -97,13 +106,15 @@ namespace LinkedList.Test
             _sut.RemoveAt(2);
             Assert.AreNotSame(temp, _sut.Get(2));
         }
-
-        //---------- Search ----------
+        //---------- 
+        
+        //---------- Search 
         [TestMethod]
         public void Search_SuccessfullyFoundElemnt()
         {
             Assert.AreSame(_sut.Head.Data, _sut.Search( data => data == "Anna"));
             Assert.AreSame(_sut.Tail.Data, _sut.Search( data => data == "Zoltán"));
         }
+        //---------- 
     }
 }
